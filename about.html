@@ -35,46 +35,35 @@
     <link rel="stylesheet" type="text/css" href="css/styleswitcher.css">
 
     <style>
+    /* Make the “Xem video” look like text/link */
     .video-btn {
-      padding: 6px 14px;
-      border: none;
-      border-radius: 6px;
-      background: #0077ff;
-      color: #fff;
-      font-size: 14px;
+      padding: 0;           /* remove extra spacing */
+      background: none;     /* transparent like text */
+      border: none;         /* no border */
+      color: #0077ff;       /* same blue as links */
+      font-size: inherit;   /* inherit size from surrounding text */
+      line-height: inherit; /* align nicely */
       cursor: pointer;
-      transition: opacity .2s ease;
+      text-decoration: underline; /* like anchor */
     }
-    .video-btn:hover { opacity: .85; }
+    .video-btn:hover { opacity: .8; }
 
+    /* Modal */
     #videoModal {
-      position: fixed;
-      inset: 0;
+      position: fixed; inset: 0;
       background: rgba(0,0,0,.6);
-      display: none;
-      justify-content: center;
-      align-items: center;
+      display: none; justify-content: center; align-items: center;
       z-index: 1000;
     }
     #videoModalContent {
-      background: #000;
-      border-radius: 8px;
-      overflow: hidden;
-      max-width: 90%;
-      width: 640px;
-      aspect-ratio: 16/9;
+      background: #000; border-radius: 8px; overflow: hidden;
+      max-width: 90%; width: 640px; aspect-ratio: 16/9;
       box-shadow: 0 4px 20px rgba(0,0,0,.4);
     }
     #videoModal video { width: 100%; height: 100%; display: block; }
     #closeModal {
-      position: absolute;
-      top: 20px;
-      right: 30px;
-      font-size: 32px;
-      color: #fff;
-      cursor: pointer;
-      user-select: none;
-      line-height: 1;
+      position: absolute; top: 20px; right: 30px;
+      font-size: 32px; color: #fff; cursor: pointer; user-select: none; line-height: 1;
     }
   </style>
 
