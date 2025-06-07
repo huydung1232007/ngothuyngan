@@ -35,16 +35,18 @@
     <link rel="stylesheet" type="text/css" href="css/styleswitcher.css">
 
     <style>
-    /* Make the “Xem video” look like text/link */
+    /* .video-btn hiển thị như link Facebook (cùng font), nhưng màu hồng */
     .video-btn {
-      padding: 0;           /* remove extra spacing */
-      background: none;     /* transparent like text */
-      border: none;         /* no border */
-      color: #0077ff;       /* same blue as links */
-      font-size: inherit;   /* inherit size from surrounding text */
-      line-height: inherit; /* align nicely */
+      padding: 0;           /* loại bỏ padding */
+      background: none;     /* trong suốt */
+      border: none;         /* không viền */
+      color: #ff3399;       /* màu hồng */
+      font-family: 'Open Sans', sans-serif; /* giống font của link Facebook */
+      font-size: inherit;   /* kế thừa cỡ chữ */
+      font-weight: 600;     /* giống anchor (semi‑bold) */
+      line-height: inherit; /* canh dòng */
       cursor: pointer;
-      text-decoration: underline; /* like anchor */
+      text-decoration: none;/* bỏ gạch chân */
     }
     .video-btn:hover { opacity: .8; }
 
