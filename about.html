@@ -431,7 +431,9 @@
       closeBtn.addEventListener('click',closeModal);
       modal.addEventListener('click',e=>{if(e.target===modal)closeModal();});
     })();
-        /* QR modal */
+    </script>
+        <script>
+            /* QR modal */
   const qrModal=document.getElementById('qrModal');
   const closeQr=document.getElementById('closeQr');
   document.querySelectorAll('.qr-btn').forEach(btn=>btn.addEventListener('click',()=>{qrModal.classList.add('active');}));
