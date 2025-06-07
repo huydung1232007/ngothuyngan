@@ -663,7 +663,7 @@ body.light hr.separator {
 }
 
 .about .box-stats h3:after {
-  content: '+';
+  content: '';
   position: absolute;
   right: -24px;
   font-size: 33px;
