@@ -50,8 +50,12 @@
     }
     .video-btn:hover { opacity: .8; }
 
-    /* Icon img inside card */
-    .card-icon{height:64px;width:auto}
+    /* Square & smaller icon inside card */
+    .card-icon{
+      width:48px;
+      height:48px;
+      object-fit:contain; /* giữ tỉ lệ logo bên trong ô vuông */
+    }
 
     /* Force cards same height */
     .box-stats{min-height:180px;display:flex;flex-direction:column;justify-content:center}
