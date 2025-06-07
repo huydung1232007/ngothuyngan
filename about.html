@@ -34,6 +34,50 @@
     <link rel="alternate stylesheet" type="text/css" title="yellowgreen" href="css/skins/yellowgreen.css">
     <link rel="stylesheet" type="text/css" href="css/styleswitcher.css">
 
+    <style>
+    .video-btn {
+      padding: 6px 14px;
+      border: none;
+      border-radius: 6px;
+      background: #0077ff;
+      color: #fff;
+      font-size: 14px;
+      cursor: pointer;
+      transition: opacity .2s ease;
+    }
+    .video-btn:hover { opacity: .85; }
+
+    #videoModal {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,.6);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+    #videoModalContent {
+      background: #000;
+      border-radius: 8px;
+      overflow: hidden;
+      max-width: 90%;
+      width: 640px;
+      aspect-ratio: 16/9;
+      box-shadow: 0 4px 20px rgba(0,0,0,.4);
+    }
+    #videoModal video { width: 100%; height: 100%; display: block; }
+    #closeModal {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-size: 32px;
+      color: #fff;
+      cursor: pointer;
+      user-select: none;
+      line-height: 1;
+    }
+  </style>
+
     <!-- Modernizr JS File -->
     <script src="js/modernizr.custom.js"></script>
 </head>
@@ -333,6 +377,15 @@
 </section>
 <!-- Main Content Ends -->
 
+<div id="videoModal">
+    <span id="closeModal">&times;</span>
+    <div id="videoModalContent">
+      <video id="videoPlayer" controls>
+        <source src="https://archive.org/download/ngan_20250607/528b3006-bdf8-411a-94e0-310a7870d663.mp4" type="video/mp4">
+        Trình duyệt của bạn không hỗ trợ video HTML5.
+      </video>
+    </div>
+  </div>
 <!-- Template JS Files -->
 <script src="js/jquery-3.5.0.min.js"></script>
 <script src="js/styleswitcher.js"></script>
