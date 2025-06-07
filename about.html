@@ -49,21 +49,14 @@
       text-decoration: none;/* bỏ gạch chân */
     }
     .video-btn:hover { opacity: .8; }
-    /* Generic icon button for QR / bank logo */
-    .icon-btn{padding:0;border:none;background:none;cursor:pointer}
-    .icon-btn img{width:60px;height:auto}
-    .icon-btn:focus{outline:none}
 
-    /* Modal base */
-    .modal-overlay{position:fixed;inset:0;display:none;justify-content:center;align-items:center;background:rgba(0,0,0,.6);z-index:1200}
-    .modal-overlay.active{display:flex}
-    .modal-content{position:relative}
-    .modal-close{position:absolute;top:12px;right:18px;color:#fff;font-size:28px;line-height:1;cursor:pointer}
+    /* Icon img inside card */
+    .card-icon{height:64px;width:auto}
 
-    /* Image modal */
-    #qrModalContent img{max-width:90vw;max-height:90vh;border-radius:12px}
+    /* Force cards same height */
+    .box-stats{min-height:180px;display:flex;flex-direction:column;justify-content:center}
 
-    /* Modal */
+        /* Modal */
     #videoModal {
       position: fixed; inset: 0;
       background: rgba(0,0,0,.6);
@@ -194,9 +187,6 @@
             </div>
             <!-- Personal Info Ends -->
             <!-- Boxes Starts -->
-            <section class="facts section">
-            <div class="container">
-            <div class="row">
             <div class="col-12 col-lg-7 col-xl-6 mt-5 mt-lg-0">
                 <div class="row">
                     <div class="col-6">
@@ -217,15 +207,12 @@
                             <p class="open-sans-font m-0 position-relative text-lowercase"> Số mập mờ cũ </span></p>
                         </div>
                     </div>
-                    <div class="col-12 col-sm-6 col-lg-6 mb-4">
-        <div class="box-stats with-margin text-center p-4">
-          <!-- MB Bank logo button opens QR modal -->
-          <h3 class="poppins-font position-relative" style="margin-bottom:1.5rem;">
-            <button class="icon-btn qr-btn" aria-label="Mã QR Ngân hàng">
-              <img src="https://archive.org/download/mb_20250607/mb.png" alt="MB Bank Logo">
-            </button>
-          </h3>
-          <p class="open-sans-font m-0 position-relative">ngân hàng</p>
+                    <div class="col-12 col-sm-6 mb-4">
+            <div class="box-stats with-margin text-center p-4">
+              <img src="https://archive.org/download/mb_20250607/mb.png" alt="MB Bank Logo" class="card-icon mb-3">
+              <p class="open-sans-font m-0 position-relative">ngân hàng</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -399,14 +386,6 @@
       </video>
     </div>
   </div>
-            <!-- ========= QR Image Modal ========= -->
-<div id="qrModal" class="modal-overlay">
-  <span class="modal-close" id="closeQr">&times;</span>
-  <div class="modal-content" id="qrModalContent">
-    <img src="https://archive.org/download/qr_20250607/qr.png" alt="QR Code">
-  </div>
-</div>
-
 <!-- Template JS Files -->
 <script src="js/jquery-3.5.0.min.js"></script>
 <script src="js/styleswitcher.js"></script>
@@ -431,16 +410,6 @@
       closeBtn.addEventListener('click',closeModal);
       modal.addEventListener('click',e=>{if(e.target===modal)closeModal();});
     })();
-    </script>
-        <script>
-            /* QR modal */
-  const qrModal=document.getElementById('qrModal');
-  const closeQr=document.getElementById('closeQr');
-  document.querySelectorAll('.qr-btn').forEach(btn=>btn.addEventListener('click',()=>{qrModal.classList.add('active');}));
-  function hideQr(){qrModal.classList.remove('active');}
-  closeQr.addEventListener('click',hideQr);
-  qrModal.addEventListener('click',e=>{if(e.target===qrModal)hideQr();});
-})();
   </script>
 </body>
 
